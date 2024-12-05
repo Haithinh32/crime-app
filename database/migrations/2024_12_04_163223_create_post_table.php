@@ -14,10 +14,14 @@ return new class extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->id('post_id');
             $table->foreignId('user_id');
-            $table->foreign('user_id')->references('')->on();
-            $table->string('status');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at');
+            $table->string('title');
+            $table->string('status');
             $table->string('content');
+            $table->string('type_of_crime');
+            $table->string('image');
+            $table->string('video');
         });
     }
 
