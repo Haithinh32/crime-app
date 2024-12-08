@@ -12,9 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('region', function (Blueprint $table) {
-            $table->id('region_id');
-            $table->foreignId('post_id');
-            $table->foreign('post_id')->references('post_id')->on('post');
+            $table->id();
             $table->string('distric');
             $table->string('ward/commune');
         });
