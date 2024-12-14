@@ -31,7 +31,6 @@ class PostController extends Controller
             $post -> content = $request->input('content');
             $post -> img = $imgfile.$imgfilename;
             $post -> video = $vidfile.$vidfilename;
-            $post -> type = $request->input('type_of_crime');
             $post -> save();
         }
         catch(\Exception $e){

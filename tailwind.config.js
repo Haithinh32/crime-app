@@ -14,30 +14,10 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-            fontFamily: {},
-        fontSize: {},
-        fontWeight: {},
-        lineHeight: {},
-        letterSpacing: {},
-        borderRadius: {},
-        colors: {
-          black: "#000000",
-          text: "#d9d9d9",
-          blue: "#1d9bf0",
-          gray: "#6e767d",
-          "border-color": "#2f3336",
-          "trends-color": "#202327",
-        },
-        spacing: {},
-        width: {},
-        minWidth: {},
-        maxWidth: {},
-        height: {},
-        minHeight: {},
-        maxHeight: {},
+            },        
         },
     },
 
     plugins: [forms],
 };
+
