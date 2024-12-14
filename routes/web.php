@@ -15,6 +15,14 @@ Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
 
+Route::get('/Post', function () {
+    return view('Post');
+})->name('post');
+
+Route::get('/ListChange', function () {
+    return view('ListChangeReq');
+})->name('ListChange');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
