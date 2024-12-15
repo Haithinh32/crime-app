@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamp('created_at');
             $table->string('title');
             $table->string('status');
             $table->string('content');
             $table->string('type_of_crime');
-            $table->string('image');
-            $table->string('video');
+            $table->string('image')->nullable();
+            $table->string('video')->nullable();
+            $table->timestamps();
         });
     }
 

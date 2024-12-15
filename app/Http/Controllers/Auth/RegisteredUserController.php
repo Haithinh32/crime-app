@@ -46,6 +46,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        return redirect()->route('homepage');
+
+        return redirect(route('homepage', absolute: false));
     }
 }
