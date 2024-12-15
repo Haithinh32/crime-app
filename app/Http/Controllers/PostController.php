@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use App\Models\posts;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function create_post (Request $request){
+        dd($request);
         try{
             $imgfile = $request->file('image');
             $imgextension = $imgfile ->getClientOriginalExtension();
@@ -14,28 +17,24 @@ class PostController extends Controller
             $imgpath = 'uploads/post_img/';
             $imgfile->move($imgpath, $imgfilename);
 
-            $vidfile = $request->file('image');
+            $vidfile = $request->file('video');
             $vidextension = $vidfile ->getClientOriginalExtension();
             $vidfilename = time().'.'.$vidextension;
             $vidpath = 'uploads/post_img/';
             $vidfile->move($vidpath, $vidfilename);
 
-            $region = DB::table('region')
-            ->where('bname', $request->bname)
-            ->select('brands.id')
-            ->first();
-
             $post = new posts();
             $post -> id = $request->input('id');
             $post -> title = $request->input('title');
+            $post -> type_of_crime = $request->input('type_of_crime');
             $post -> content = $request->input('content');
             $post -> img = $imgfile.$imgfilename;
             $post -> video = $vidfile.$vidfilename;
             $post -> save();
         }
         catch(\Exception $e){
-            return redirect()->route('addnew')->with('alert', 'Something went wrong happened');
+            
         }
-            return redirect()->route('homepage');
+            // return redirect()->route('homepage');
     }
 }

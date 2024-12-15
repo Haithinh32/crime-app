@@ -1,31 +1,24 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth.register');
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
 
-Route::get('/homepage', function () {
-    return view('homepage');
-})->name('homepage');
+Route::get('/homepage',[HomeController::class, 'homepage'])->name('homepage');
+Route::get('/Post',[HomeController::class, 'post'])->name('post');
+Route::get('/Profile',[HomeController::class, 'profile'])->name('profile');
 
-Route::get('/Post', function () {
-    return view('Post');
-})->name('post');
+Route::post('/Post', [PostController::class, 'create_post'])->name('create_post');
 
-Route::get('/ListChange', function () {
-    return view('ListChangeReq');
-})->name('ListChange');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::post('/welcome', [PostController::class, 'create_post'])->name('create_post');
+
 require __DIR__.'/auth.php';
