@@ -8,17 +8,20 @@ Route::get('/', function () {
     return view('auth.register');
 });
 
-
-Route::get('/homepage',[HomeController::class, 'homepage'])->name('homepage');
-Route::get('/Post',[HomeController::class, 'post'])->name('post');
-Route::get('/Profile',[HomeController::class, 'profile'])->name('profile');
-
-Route::post('/Post', [PostController::class, 'create_post'])->name('create_post');
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/Homepage', function () {
+    return view('Homepage');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/homepage',[HomeController::class, 'homepage'])->name('homepage');
+    Route::get('/Profile',[HomeController::class, 'profile'])->name('profile');
+    Route::get('/Post',[HomeController::class, 'post'])->name('post');
+    Route::post('/Post', [PostController::class, 'create_post'])->name('create_post');
+    
+});
+
+Route::middleware(['auth','admin'])->group(function () {
+
+});   
 
 require __DIR__.'/auth.php';

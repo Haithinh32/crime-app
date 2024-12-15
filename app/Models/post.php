@@ -4,21 +4,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class posts extends Model
+class post extends Model
 {
     use HasFactory;
 
-    protected $table = 'posts';
+    protected $table = 'post';
 
     protected $fillable = [
-   'id',
-   'user_id',
-   'created_at',
-   'title',
-   'status',
-   'content',
-   'type_of_crime',
-   'image',
-   'video',
+        'user_id',
+        'title',
+        'status',
+        'content',
+        'type_of_crime',
+        'image',
+        'video',
     ];
 }
