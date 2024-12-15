@@ -18,7 +18,7 @@
         <div class="w-[1920px] h-[1080px] relative bg-white overflow-y-hidden">
             <div class="w-[276px] h-[1080px] left-[327px] top-0 absolute sticky; top: 0;">
                 <div class="w-[276px] h-[1080px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d15519] to-red-700">
-                @include('components.sidebar')
+                @include('components.sidebar_admin')
                 </div>
             </div>
             <div class="w-[600px] h-[1491px] left-[618px] top-[4px] absolute">
