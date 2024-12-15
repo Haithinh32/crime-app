@@ -52,7 +52,7 @@
             </a>
         </div>
         <div class = "flex justify-center">
-            <x-primary-button class="mt-4">
+            <x-primary-button class="mt-4 font-['Inter']">
                 {{ __('Đăng ký') }}
             </x-primary-button>
         </div>

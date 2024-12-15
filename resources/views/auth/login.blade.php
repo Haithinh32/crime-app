@@ -1,4 +1,4 @@
-<x-login_outLayout>
+<x-loginregis-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -22,10 +22,10 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
         
-        <div class = "flex justify-end">
+        <div class = "flex justify-end mt-4">
             <x-primary-button class="ms-3">
                 {{ __('Đăng nhập') }}
             </x-primary-button>
         </div>
     </form>
-</x-login_outLayout>
+</x-loginregis-layout>
