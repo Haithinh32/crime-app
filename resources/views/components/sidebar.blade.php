@@ -20,9 +20,9 @@
         <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">Bùi Đăng Huy</div>
       </div>
     </div>
-  </a>
-  <img class="w-[50px] h-[46.30px] left-[6px] top-[4px] absolute" src="https://via.placeholder.com/50x46" />
-  <a href="{{ route('post') }}" class="w-[205px] h-[48.64px] left-[35px] top-[516px] absolute">
+  </div>
+  <img class="w-[50px] h-[46.30px] left-[6px] top-[4px] absolute" src="{{asset('storage/logo.png')}}" />
+  <div class="w-[205px] h-[48.64px] left-[35px] top-[516px] absolute">
     <div class="w-[205px] h-[48.64px] left-0 top-0 absolute bg-white rounded-[26.06px] border border-black"></div>
     <div class="w-[144.19px] h-[26.93px] left-[33.01px] top-[11.29px] absolute text-center text-[#161616] text-xl font-bold font-['Inter']">Tạo bài đăng</div>
   </a>

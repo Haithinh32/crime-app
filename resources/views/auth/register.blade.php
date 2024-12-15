@@ -9,6 +9,13 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
+        <!--Full Name -->
+        <div class = "mt-4">
+            <x-input-label for="full_name" :value="__('Họ và tên')"/>
+            <x-text-input id="full_name" class="block mt-1 w-full" type="text" name="full_name" :value="old('full_name')" required />
+            <x-input-error :messages="$errors->get('full_name')" class="mt-2" />
+        </div>
+
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
@@ -45,7 +52,7 @@
             </a>
         </div>
         <div class = "flex justify-center">
-            <x-primary-button class="mt-4">
+            <x-primary-button class="mt-4 font-['Inter']">
                 {{ __('Đăng ký') }}
             </x-primary-button>
         </div>
