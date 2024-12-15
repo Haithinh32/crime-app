@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreignId('region_id');
-            $table->foreign('region_id')->references('id')->on('region');
             $table->timestamp('created_at');
             $table->string('title');
             $table->string('status');
