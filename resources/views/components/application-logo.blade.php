@@ -1,1 +1,1 @@
-<image src = "{{ asset('storage/logo.png')}}">
+<image src = "{{ asset('image\SystemImg\logo.png')}}">

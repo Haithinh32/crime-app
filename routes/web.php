@@ -24,4 +24,8 @@ Route::middleware(['auth','admin'])->group(function () {
 
 });   
 
+Route::get('/authorize', function () {
+    return view('AuthorizeAdmin');
+})->name('authorize');
+
 require __DIR__.'/auth.php';
