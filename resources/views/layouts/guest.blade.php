@@ -18,23 +18,31 @@
         <div class="w-[1920px] h-[1080px] relative bg-white overflow-y-hidden">
             <div class="w-[276px] h-[1080px] left-[327px] top-0 absolute sticky; top: 0;">
                 <div class="w-[276px] h-[1080px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d15519] to-red-700">
-                @include('components.sidebar')
+                    @include('components.sidebar')
                 </div>
             </div>
             <div class="w-[600px] h-[1491px] left-[618px] top-[4px] absolute">
                 <div class="w-[600px] h-[1491px] left-0 top-0 absolute bg-white rounded-[20px] shadow">
                     <div class="w-[599px] h-[53px] left-0 top-0 absolute bg-gradient-to-b from-[#b21c1c] via-[#b32121] to-white rounded-[20px]">
-                      {{ $header }}
+                        {{ $header }}
                     </div>
                     <div class="w-[599px] h-px left-0 top-[52px] absolute bg-white"></div>
-                        {{ $slot }}
+                    {{ $slot }}
                 </div>
             </div>
             <div class="w-[360px] h-[1080px] left-[1233px] top-0 absolute">
                 <div class="w-[360px] h-[1080px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d25619] to-red-700"></div>
-
+                @if (Route::has('register'))
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[1008px] absolute bg-white rounded-[50px] border border-black">
+                        <div class="left-[57px] top-[13px] absolute text-[#161616] text-[19px] font-bold font-['Inter']"> Đăng xuất </div>
+                    </button>
+                </form>
+                @endif
             </div>
         </div>
     </div>
 </body>
+
 </html>
