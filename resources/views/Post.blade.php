@@ -15,12 +15,12 @@
         <div class="w-[475px] h-[717px] relative">
             <input type="hidden" name="user_id" value="{{ Auth::id() }}" />
             <div class="w-[381.99px] h-[65.78px] left-[37.01px] top-[119.72px] absolute">
-                <label class="w-[175.71px] h-[19.10px] left-[18.34px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Tieu de</label>
+                <label class="w-[175.71px] h-[19.10px] left-[18.34px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Tiêu đề</label>
                 <input type="text" name="title" id="title" placeholder="Nhập vào đây" class="form-control w-[381.99px] h-[31.83px] left-0 top-[33.95px] absolute bg-white rounded-[10px] border border-black">
             </div>
 
             <div class="w-[381.99px] h-[62.65px] left-[37px] top-[197.18px] absolute">
-                <label class="w-[148.21px] h-[15.92px] left-[18.35px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Loai toi pham</label>
+                <label class="w-[148.21px] h-[15.92px] left-[18.35px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Loại tội phạm</label>
                 <input type="text" name="type_of_crime" id="type_of_crime" placeholder="Nhập vào đây" class="form-control w-[381.99px] h-[31.83px] left-0 top-[30.82px] absolute bg-white rounded-[10px] border border-black">
             </div>
 

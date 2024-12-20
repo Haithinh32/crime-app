@@ -30,4 +30,12 @@ Route::middleware(['auth','verified','admin'])->group(function () {
 
 });   
 
+Route::get('/authorize', function () {
+    return view('AuthorizeAdmin');
+})->name('authorize');
+
+Route::get('/censorpost', function () {
+    return view('CensorPost');
+})->name('censorpost');
+
 require __DIR__.'/auth.php';
