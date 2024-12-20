@@ -11,328 +11,53 @@
         </div>
     </x-slot:header>
     <div class="w-[600px] h-[1238px] relative">
-        <div class="w-[600px] h-[1008px] left-0 top-[230px] absolute">
-            <div class="w-[191px] h-[33px] left-[389px] top-[955.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
+        <div class="w-[600px] left-0 top-[230px] absolute">
+        @foreach ($listuser as $user)
+            <div style="width: 600px; height: 72px; padding-top: 12px; padding-bottom: 12px; padding-left: 15px; border-bottom: 1px black solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
+                <div style="width: 48px; height: 48px; position: relative">
+                    <img style="width: 48px; height: 48px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/48x48" />
                 </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[936px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">namkhanh</div>
+                <div style="width: 291px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 9px; display: inline-flex">
+                    <div style="justify-content: flex-start; align-items: center; gap: 7px; display: inline-flex">
+                        <div style="width: 61px; height: 18px; position: relative">
+                            <div style="left: 0px; top: 0px; position: absolute; color: black; font-size: 15px; font-family: Inter; font-weight: 700; word-wrap: break-word">{{ $user->name }}</div>
                         </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">1/9</div>
+                        <div style="width: 5px; height: 18px; position: relative"></div>
+                        <div style="width: 31px; height: 18px; position: relative"></div>
                     </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-
-            <div class="w-[191px] h-[33px] left-[389px] top-[883.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
                 </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[864px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">thuy van</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">9/9</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-
-            <div class="w-[191px] h-[33px] left-[389px] top-[811.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[792px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">thuydung</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">11/9</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[739.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[720px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/thaovy_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">thaovy</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">18/9</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[667.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[648px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">minhthu</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">28/9</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[595.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[576px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">phuongthao</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">1/10</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[523.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[504px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">lananh</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">9/10</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[451.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[432px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/hoaithuong_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">hoaithuong</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">11/10</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[379.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[360px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/huong_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative opacity-80">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">huong</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">20/10</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[307.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[288px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/ngochieu_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">ngochieu</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">10/11</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[235.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[216px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/ngocanh_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">                            
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">ngocanh</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">20/11</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[163.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[144px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/default_user.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                   <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">danghuy</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">25/11</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[91.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 py-3 left-0 top-[72px] absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/anhthao_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-[0.16px] top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="justify-start items-start gap-2.5 flex">
-                            <div class="text-black text-[15px] font-bold font-['Inter']">anhthaoo</div>
-                        </div>
-                        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">28/11</div>
-                    </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
-            </div>
-            <div class="w-[191px] h-[33px] left-[389px] top-[19.50px] absolute">
-                <div class="w-[191px] h-[33px] px-3 py-1.5 left-0 top-0 absolute bg-white rounded-[10px] border border-black justify-start items-center gap-14 inline-flex">
-                    <div class="w-[98px] text-black text-[17px] font-bold font-['Inter']">Chọn</div>
-                </div>
-            </div>
-            <div class="pl-[15px] pr-5 pt-3 pb-2.5 left-0 top-0 absolute border-b border-black justify-center items-center gap-6 inline-flex">
-                <div class="w-12 h-12 relative">
-                    <img class="w-12 h-12 left-0 top-0 absolute" src="{{asset('storage/haithinh_avt.png')}}" />
-                </div>
-                <button class="w-[278px] h-[45px] relative">
-                    <div class="left-0 top-0 absolute justify-start items-center gap-[7px] inline-flex">
-                        <div class="w-[61px] h-[18px] relative">
-                            <div class="left-0 top-0 absolute text-black text-[15px] font-bold font-['Inter']">haithinh</div>
-                        </div>
-                        <div class="w-[5px] h-[18px] relative">
-                            <div class="left-0 top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-                        </div>
-                        <div class="w-[31px] h-[18px] relative">
-                            <div class="left-0 top-0 absolute text-[#6e767d] text-[15px] font-light font-['Inter']">9/12</div>
+                <div style="width: 191px; height: 33px; position: relative">
+                    <div class="relative inline-block text-left">
+                        <div>
+                            <button type="button" class="dropdown-button inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button"  data-target="#dropdown-menu-{{ $user->id }}" aria-expanded="true" aria-haspopup="true">
+                                Người dùng
+                                <svg class="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none hidden " data-target="#dropdown-menu-{{ $user->id }}" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div class="py-1" role="none">
+                                    
+                                    <form method="post" action="{{ route('changeUserType', $user->id) }}" role="none">
+                                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Admin</button>
+                                    </form>
+                                    <form method="post" action="{{ route('changeUserType', $user->id) }}" role="none">
+                                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">User</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-[175px] h-[18px] left-0 top-[27px] absolute">
-                        <div class="left-0 top-0 absolute text-black text-[15px] font-normal font-['Inter']">Xem hồ sơ</div>
-                    </div>
-                </button>
+                </div>
             </div>
+        @endforeach   
         </div>
         <div class="left-[27px] top-[173px] absolute text-black text-xl font-bold font-['Inter']">Danh sách người dùng</div>
         <div class="w-[500px] h-11 left-[53px] top-[86px] absolute">
             <div class="w-[440px] h-11 left-[60px] top-0 absolute rounded-[30px]">
                 <input name="search" placeholder="Tìm kiếm" class="w-[440px] h-11 left-0 top-0 absolute bg-white rounded-[30px] border border-[#d9cfcf] text-[#292d32] text-base font-normal font-['Inter']"></input>
             </div>
-            <div class="w-10 h-10 left-0 top-0 absolute"> 
+            <div class="w-10 h-10 left-0 top-0 absolute">
                 <x-search-button />
             </div>
         </div>

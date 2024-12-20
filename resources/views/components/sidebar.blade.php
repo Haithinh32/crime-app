@@ -9,8 +9,8 @@
       </a>
     </div>
   </div>
-  <div class="w-10 h-10 left-[12px] top-[1028px] absolute"></div>
-  <a href="{{ route('profile') }}" class=" w-[276px] h-16 left-0 top-[1016px] absolute">
+  <div class="w-10 h-10 left-[12px] top-[900px] absolute"></div>
+  <a href="{{ route('profile') }}" class=" w-[276px] h-16 left-0 top-[900px] absolute">
     <div class="w-[122px] h-[37px] left-[64px] top-[14px] absolute">
       <div class="left-0 top-0 absolute justify-start items-start gap-0.5 inline-flex">
         <div class="text-[#161616] text-[15px] font-bold font-['Inter']">danghuy</div>
