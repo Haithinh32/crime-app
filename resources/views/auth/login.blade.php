@@ -23,6 +23,9 @@
         </div>
         
         <div class = "flex justify-end mt-4">
+            <div class="w-[260px] h-[49px] relative">
+                <a href = "{{route('register')}}" class="w-[250px] h-[49px] left-0 top-0 absolute text-black text-[13.12px] font-normal font-['Inter'] underline leading-tight">Chưa có tài khoản?</a>
+            </div>
             <x-primary-button class="ms-3">
                 {{ __('Đăng nhập') }}
             </x-primary-button>
