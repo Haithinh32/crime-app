@@ -10,16 +10,16 @@
     </div>
   </div>
   <div class="w-10 h-10 left-[12px] top-[900px] absolute"></div>
-  <a href="{{ route('profile') }}" class=" w-[276px] h-16 left-0 top-[900px] absolute">
-    <div class="w-[122px] h-[37px] left-[64px] top-[14px] absolute">
-      <div class="left-0 top-0 absolute justify-start items-start gap-0.5 inline-flex">
-        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">danghuy</div>
+  <a href="{{ route('profile') }}" class="w-[276px] h-auto left-0 top-[900px] absolute">
+      <div class="w-[122px] h-[37px] left-[64px] top-[14px] absolute">
+        <div class="left-0 top-0 absolute justify-start items-start gap-0.5 inline-flex">
+          <div class="text-[#161616] text-[15px] font-bold font-['Inter']">{{ Auth::user()->name }}</div>
+        </div>
+        <div class="left-0 top-[19px] absolute justify-start items-start gap-2.5 inline-flex">
+          <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">{{ Auth::user()->full_name }}</div>
+        </div>
       </div>
-      <div class="left-0 top-[19px] absolute justify-start items-start gap-2.5 inline-flex">
-        <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">Bùi Đăng Huy</div>
-      </div>
-    </div>
-  </a>
+    </a>
   <img class="w-[50px] h-[46.30px] left-[6px] top-[4px] absolute" src="{{asset('image\SystemImg\logo.png')}}" />
   <a href="{{ route('post') }}" class="w-[205px] h-[48.64px] left-[35px] top-[516px] absolute">
     <div class="w-[205px] h-[48.64px] left-0 top-0 absolute bg-white rounded-[26.06px] border border-black"></div>

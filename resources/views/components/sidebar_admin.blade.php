@@ -13,13 +13,13 @@
     <a href="{{ route('profile') }}" class="w-[276px] h-auto left-0 top-[900px] absolute">
       <div class="w-[122px] h-[37px] left-[64px] top-[14px] absolute">
         <div class="left-0 top-0 absolute justify-start items-start gap-0.5 inline-flex">
-          <div class="text-[#161616] text-[15px] font-bold font-['Inter']">anhhthao</div>
+          <div class="text-[#161616] text-[15px] font-bold font-['Inter']">{{ Auth::user()->name }}</div>
         </div>
         <div class="left-0 top-[19px] absolute justify-start items-start gap-2.5 inline-flex">
-          <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">Trương Thảo Anh</div>
+          <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">{{ Auth::user()->full_name }}</div>
         </div>
       </div>
-</a>
+    </a>
     <img class="w-[50px] h-[46.30px] left-[6px] top-[4px] absolute" src="{{asset('storage/logo.png')}}" />
     <div class="w-[205px] h-auto left-[35px] top-[516px] absolute">
       <div class="w-[205px] h-[48.64px] left-0 top-0 absolute bg-white rounded-[26.06px] border border-black"></div>

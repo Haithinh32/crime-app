@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('status');
             $table->string('content');
+            $table->string('district');
             $table->string('type_of_crime');
             $table->string('image')->nullable();
             $table->string('video')->nullable();

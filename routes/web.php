@@ -9,9 +9,9 @@ Route::get('/', function () {
     return view('auth.register');
 });
 
-Route::get('/Homepage', function () {
-    return view('Homepage');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/Homepage', [PostController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware(['auth','verified'])->group(function () {
     Route::get('/homepage',[HomeController::class, 'homepage'])->name('homepage');

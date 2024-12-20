@@ -15,6 +15,7 @@ class post extends Model
         'title',
         'status',
         'content',
+        'district',
         'type_of_crime',
         'image',
         'video',
