@@ -43,4 +43,12 @@ class PostController extends Controller
         }
             return redirect()->route('homepage');
     }
+
+    public function index()
+    {
+        $listposts= DB::table('post')
+                            ->join('users', 'users.id', '=', 'post.user_id')
+                            ->get();
+        return view('Homepage', ['listpost' => $listposts]);
+    }
 }
