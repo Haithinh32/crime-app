@@ -6,21 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class AuthorityController extends Controller
 {
-    public function changeUserType(Request $request, $userId)
+    public function changeUserType(Request $request)
     {
-        $newUserType = $request->input('user_type');
-
-        if (!in_array($newUserType, ['admin', 'user'])) {
-            return response()->json(['error' => 'Invalid user type'], 400);
-        }
+        $userId = $request->user_id;
+        $type = $request->user_type;
 
         $user = \App\Models\User::find($userId);
         if ($user) {
-            $user->user_type = $newUserType;
-            $user->save();
+            DB::table('users')
+                ->where('id', $userId)
+                ->update(['usertype' => $type]);
 
             return response()->json(['message' => 'User type updated successfully']);
-        } else {
+        }
+        else {
             return response()->json(['error' => 'User not found'], 404);
         }
     }

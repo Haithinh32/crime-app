@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('status');
+            $table->integer('priority')->default(1);
             $table->string('content');
             $table->string('district');
             $table->string('type_of_crime');

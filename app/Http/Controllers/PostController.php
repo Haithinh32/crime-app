@@ -31,7 +31,7 @@ class PostController extends Controller
             $post -> title = $request->input('title');
             $post -> type_of_crime = $request->input('type_of_crime');
             $post -> content = $request->input('content');
-            $post->status = false;
+            $post->status = false; 
             if ($request->hasFile('image')) {
             $post -> image = $imgfile.$imgfilename;}
             if ($request->hasFile('video')) {
@@ -44,11 +44,25 @@ class PostController extends Controller
             return redirect()->route('homepage');
     }
 
+    public function censor_post(Request $request){
+        
+    }
+
     public function index()
     {
         $listposts= DB::table('post')
                             ->join('users', 'users.id', '=', 'post.user_id')
                             ->get();
-        return view('Homepage', ['listpost' => $listposts]);
+        return view('Homepage', ['listpost' => $listposts]);    
     }
+
+    public function index_censor()
+    {
+        $listposts= DB::table('post')
+                            ->join('users', 'users.id', '=', 'post.user_id')
+                            ->where('status',false)
+                            ->get();
+        return view('ListPost', ['listpost' => $listposts]);    
+    }
+
 }

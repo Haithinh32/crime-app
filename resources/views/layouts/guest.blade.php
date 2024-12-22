@@ -15,8 +15,8 @@
 <body class="font-sans text-gray-900 antialiased overflow-x-hidden">
     <div class="min-h-screen flex flex-col sm:justify-center items-center">
         <div class="w-[1920px] h-[1080px] relative bg-white">
-        <div class="w-[276px] h-[900px] left-96 top-0 fixed">
-                <div class="w-[276px] h-[900px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d15519] to-red-700">
+        <div class="w-[276px] h-[800px] left-80 top-0 fixed">
+                <div class="w-[276px] h-[800px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d15519] to-red-700">
                     @include('components.sidebar')
                 </div>
             </div>
@@ -29,12 +29,12 @@
                     {{ $slot }}
                 </div>
             </div>
-            <div class="w-[360px] h-[1000px] right-96 top-0 fixed">
+            <div class="w-[360px] h-[1000px] right-80 top-0 fixed">
                 <div class="w-[360px] h-[1000px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d25619] to-red-700"></div>
                 @if (Route::has('register'))
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[900px] absolute bg-white rounded-[50px] border border-black">
+                    <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[800px] absolute bg-white rounded-[50px] border border-black">
                         <div class="left-[57px] top-[13px] absolute text-[#161616] text-[19px] font-bold font-['Inter']"> Đăng xuất </div>
                     </button>
                 </form>
