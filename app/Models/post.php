@@ -19,5 +19,6 @@ class post extends Model
         'type_of_crime',
         'image',
         'video',
+        'priority',
     ];
 }

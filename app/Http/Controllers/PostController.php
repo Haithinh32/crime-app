@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -36,6 +37,12 @@ class PostController extends Controller
             $post -> image = $imgfile.$imgfilename;}
             if ($request->hasFile('video')) {
             $post -> video = $vidfile.$vidfilename;}
+            if(Auth::user() -> usertype == 'admin'){
+                $post -> priority =$request->input('priority');
+            }
+            else{
+                $post -> priority = 1;
+            }
             $post -> save();
         }
         catch(\Exception $e){
@@ -48,7 +55,23 @@ class PostController extends Controller
     {
         $listposts= DB::table('post')
                             ->join('users', 'users.id', '=', 'post.user_id')
+                            ->where('post.status', '=', '1')
+                            ->orderBy('priority', 'asc')
                             ->get();
+        return view('Homepage', ['listpost' => $listposts]);
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('search');
+    
+        $listposts = DB::table('post')
+            ->join('users', 'users.id', '=', 'post.user_id')
+            ->where('post.status', '=', '1')
+            ->where('post.district', 'LIKE', '%' . $query . '%')
+            ->orderBy('priority', 'asc')
+            ->get();
+    
         return view('Homepage', ['listpost' => $listposts]);
     }
 }

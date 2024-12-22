@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('type_of_crime');
             $table->string('image')->nullable();
             $table->string('video')->nullable();
+            $table->integer('priority');
             $table->timestamps();
         });
     }

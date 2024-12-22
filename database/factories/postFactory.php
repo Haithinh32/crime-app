@@ -19,7 +19,7 @@ class postFactory extends Factory
         return [
             'title' => Str::random(10),
             'user_id'=> 1,
-            'status' => 0,
+            'status' => 1,
             'content' => Str::random(10),
             'district'=> Str::random(10),
             'type_of_crime' => Str::random(10),
@@ -27,6 +27,7 @@ class postFactory extends Factory
             'video' => null,
             'created_at' => now(),
             'updated_at' => now(),
+            'priority' => 1,
         ];
     }
 }

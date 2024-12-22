@@ -38,7 +38,7 @@
                             <span class="text-black text-base font-normal font-['Inter']">{{$post->district}}</span>
                         </div>
                         <div class="w-[500px]">
-                            <span class="text-black text-base font-bold font-['Inter']">Nội dung:  </span>
+                            <span class="text-black text-base font-bold font-['Inter']">Nội dung: </span>
                             <span class="text-black text-base font-normal font-['Inter']">{{$post->content}}</span>
                         </div>
                     </div>

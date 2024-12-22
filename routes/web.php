@@ -14,12 +14,13 @@ Route::get('/Homepage', [PostController::class, 'index'])
     ->name('dashboard');
 
 Route::middleware(['auth','verified'])->group(function () {
-    Route::get('/homepage',[HomeController::class, 'homepage'])->name('homepage');
+    Route::get('/homepage',[PostController::class, 'index'])->name('homepage');
     Route::get('/Profile',[HomeController::class, 'profile'])->name('profile');
     Route::get('/Post',[HomeController::class, 'post'])->name('post');
     Route::post('/Post', [PostController::class, 'create_post'])->name('create_post');
-    
+    Route::post('/homepage',[PostController::class, 'search'])->name('Search');  
 });
+
 
 Route::get('/AuthorizeAdmin', [AuthorityCOntroller::class, 'index_admin'])->name('index_admin');
 
