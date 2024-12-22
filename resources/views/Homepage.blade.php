@@ -22,6 +22,12 @@
                 <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">{{$post->created_at}}</div>
                 <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
             </div>
+            <form method="post" action="{{ route('Delete', ['post_id' => $post->id]) }}">
+    @csrf
+    <button type='submit' class="w-[30px] h-[30px] left-[535px] absolute">
+        <img src="{{asset('image/Sys.png')}}">  
+    </button>
+</form>
             <div class="self-stretch h-[628px] pt-2.5 flex-col justify-start items-center gap-[34px] flex overflow-hidden">
                 <div class="self-stretch h-[628px] pt-2.5 flex-col justify-start items-center gap-[34px] flex overflow-y-auto">
                     <div class="self-stretch justify-start items-center gap-[9px]">

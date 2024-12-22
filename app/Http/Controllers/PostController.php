@@ -53,14 +53,14 @@ class PostController extends Controller
 
     public function index()
     {
-        $listposts= DB::table('post')
-                            ->join('users', 'users.id', '=', 'post.user_id')
-                            ->where('post.status', '=', '1')
-                            ->orderBy('priority', 'asc')
-                            ->get();
-        return view('Homepage', ['listpost' => $listposts]);    
+    $listposts = DB::table('post')
+                    ->join('users', 'users.id', '=', 'post.user_id')
+                    ->where('post.status', '=', '1')
+                    ->orderBy('priority', 'asc')
+                    ->select('post.id', 'post.user_id', 'post.title', 'post.content', 'post.district', 'post.type_of_crime', 'post.image', 'post.video', 'post.priority', 'post.created_at', 'users.name', 'users.full_name')
+                    ->get();
+    return view('Homepage', ['listpost' => $listposts]);
     }
-
     public function search(Request $request)
     {
         $query = $request->input('search');
@@ -83,4 +83,9 @@ class PostController extends Controller
         return view('ListPost', ['listpost' => $listposts]);    
     }
 
+    public function delete(Request $request){
+        $id = $request->post_id;
+        DB::table('post')->where('post.id', '=', $id)->delete();
+        return redirect()->route('homepage');
+    }
 }

@@ -16,10 +16,13 @@
 <body class="font-sans text-gray-900 antialiased overflow-x-hidden">
     <div class="min-h-screen flex flex-col sm:justify-center items-center">
         <div class="w-[1920px] h-[1080px] relative bg-white">
-            <div class="w-[276px]  h-[1000px] left-96 top-0 fixed">
-
-                <div class="w-[276px]  h-[1000px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d15519] to-red-700">
-                    @include('components.sidebar')
+            <div class="w-[276px] h-auto left-96 top-0 fixed">
+                <div class="w-[276px]  h-auto left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d15519] to-red-700">
+                    @if(Auth::user()->usertype == 'admin')
+                        @include('components.sidebar_admin')
+                    @else
+                        @include('components.sidebar')
+                    @endif
                 </div>
             </div>
             <div class="w-[600px] h-auto left-[618px] top-0 absolute">
