@@ -38,7 +38,7 @@
                 @if (Route::has('register'))
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[900px] absolute bg-white rounded-[50px] border border-black">
+                    <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[800px] absolute bg-white rounded-[50px] border border-black">
                         <div class="left-[57px] top-[13px] absolute text-[#161616] text-[19px] font-bold font-['Inter']"> Đăng xuất </div>
                     </button>
                 </form>

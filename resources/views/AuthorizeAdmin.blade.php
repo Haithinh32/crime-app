@@ -17,13 +17,11 @@
                 <div style="width: 48px; height: 48px; position: relative">
                     <img style="width: 48px; height: 48px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/48x48" />
                 </div>
-                <div style="width: 291px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 9px; display: inline-flex">
-                    <div style="justify-content: flex-start; align-items: center; gap: 7px; display: inline-flex">
-                        <div style="width: 61px; height: 18px; position: relative">
+                <div style="width: 291px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 9px;">
+                    <div style="justify-content: flex-start; align-items: center; gap: 7px;">
+                        <div style="width: auto; height: 18px; position: relative">
                             <div style="left: 0px; top: 0px; position: absolute; color: black; font-size: 15px; font-family: Inter; font-weight: 700; word-wrap: break-word">{{ $user->name }}</div>
                         </div>
-                        <div style="width: 5px; height: 18px; position: relative"></div>
-                        <div style="width: 31px; height: 18px; position: relative"></div>
                     </div>
                 </div>
                 <div style="width: 191px; height: 33px; position: relative">
@@ -38,11 +36,13 @@
                             <div class="dropdown-menu absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none hidden " data-target="#dropdown-menu-{{ $user->id }}" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                                 <div class="py-1" role="none">
                                     
-                                    <form method="post" action="{{ route('changeUserType', $user->id) }}" role="none">
-                                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Admin</button>
+                                    <form method="post" action="{{ route('changeUserType',['user_id' => $user->id,'user_type'=>'admin' ] ) }}" role="none">
+                                    @csrf
+                                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm font-semibold text-gray-700" role="menuitem" tabindex="-1" id="menu-item-1">Quản trị</button>
                                     </form>
-                                    <form method="post" action="{{ route('changeUserType', $user->id) }}" role="none">
-                                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">User</button>
+                                    <form method="post" action="{{ route('changeUserType', ['user_id' => $user->id,'user_type'=>'user' ] ) }}" role="none">
+                                    @csrf 
+                                        <button type="submit" class="block w-full px-4 py-2 text-left text-sm font-semibold text-gray-700" role="menuitem" tabindex="-1" id="menu-item-2">Người dùng</button>
                                     </form>
                                 </div>
                             </div>
