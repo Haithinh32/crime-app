@@ -32,27 +32,23 @@ class PostController extends Controller
             $post -> title = $request->input('title');
             $post -> type_of_crime = $request->input('type_of_crime');
             $post -> content = $request->input('content');
-            $post->status = false; 
             if ($request->hasFile('image')) {
             $post -> image = $imgfile.$imgfilename;}
             if ($request->hasFile('video')) {
             $post -> video = $vidfile.$vidfilename;}
             if(Auth::user() -> usertype == 'admin'){
                 $post -> priority =$request->input('priority');
+                $post -> status = 1;
             }
             else{
                 $post -> priority = 1;
+                $post -> status = 0;
             }
             $post -> save();
-        }
-        catch(\Exception $e){
-           dd($e);
+        } catch (\Exception $e) {
+            dd($e);
         }
             return redirect()->route('homepage');
-    }
-
-    public function censor_post(Request $request){
-        
     }
 
     public function index()
@@ -82,7 +78,7 @@ class PostController extends Controller
     {
         $listposts= DB::table('post')
                             ->join('users', 'users.id', '=', 'post.user_id')
-                            ->where('status',false)
+                            ->where('post.status', '=', '0')
                             ->get();
         return view('ListPost', ['listpost' => $listposts]);    
     }

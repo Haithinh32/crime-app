@@ -22,8 +22,6 @@ Route::middleware(['auth','verified'])->group(function () {
 });
 
 Route::get('/AuthorizeAdmin', [AuthorityController::class, 'index_admin'])->name('index_admin');
-
-
 Route::post('/AuthorizeAdmin', [AuthorityController::class, 'changeUserType'])->name('changeUserType');
 
 Route::get('/ListPost', [PostController::class, 'index_censor'])-> name('index_censor');
