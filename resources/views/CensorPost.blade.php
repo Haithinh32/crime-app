@@ -9,34 +9,61 @@
           <div class="w-5 h-5 left-[7px] top-[7px] absolute"></div>
         </div>
       </div>
-    </x-slot:header>
+    </x-slot:header>  
+    @foreach($listpost as $post)
     <div class="w-[600px] h-[899px] left-0 top-[108px] absolute">
-    <div class="w-[180px] h-[45px] left-[376px] top-[854px] absolute bg-[#f91515]/80 rounded-[34.60px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]  overflow-hidden">
-      <div class="left-[75.04px] top-[16.35px] absolute text-center text-white text-[15px] font-bold font-['Inter']">Xóa </div>
-    </div>
-    <div class="w-[180px] h-[45px] left-[52px] top-[854px] absolute bg-[#22b80e]/80 rounded-[34.60px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]  overflow-hidden">
-      <div class="left-[67.04px] top-[16.35px] absolute text-center text-white text-[15px] font-bold font-['Inter']">Duyệt </div>
-    </div>
-    <div class="h-[796px] px-[50px] py-5 left-0 top-0 absolute flex-col justify-start items-start inline-flex">
-      <div class="justify-start items-center gap-[7px] inline-flex">
-        <div class="w-[47.84px] h-12 relative">
-          <img class="w-[47.84px] h-12 left-0 top-0 absolute" src="https://via.placeholder.com/48x48" />
+      <form method="post" action="{{ route('censor',['post_id' => $post->id] ) }}">
+      @csrf
+        <button type="sumit" class="w-[180px] h-[45px] left-[376px] top-[854px] absolute bg-[#f91515]/80 rounded-[34.60px] shadow-[0px_6.012422561645508px_6.012422561645508px_0px_rgba(0,0,0,0.25)]  overflow-hidden">
+          <div class="left-[75.04px] top-[16.35px] absolute text-center text-white text-[15px] font-bold font-['Inter']">Xóa </div>
+        </button>
+      </form>
+      <form method="post" action="{{ route('censor',['post_id' => $post->id, 'post_status' => 1] ) }}">
+      @csrf
+        <button type="sumit" class="w-[180px] h-[45px] left-[52px] top-[854px] absolute bg-[#22b80e]/80 rounded-[34.60px] shadow-[0px_6.012422561645508px_6.012422561645508px_0px_rgba(0,0,0,0.25)]  overflow-hidden">
+          <div class="left-[67.04px] top-[16.35px] absolute text-center text-white text-[15px] font-bold font-['Inter']">Duyệt </div>
+        </button>
+      
+        <div class="left-[50px] top-[20px] absolute justify-start items-center gap-[7px] inline-flex">
+          <div class="w-[47.84px] h-12 relative">
+            <img class="w-[47.84px] h-12 left-0 top-0 absolute" src="{{ asset('storage/default_user.png') }}" />
+          </div>
+          <div class="justify-start items-start gap-2.5 flex">
+            <div class="text-black text-[15px] font-bold font-['Inter']">{{$post->name}}</div>
+          </div>
+          <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
+          <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">{{$post->created_at}}</div>
+          
+            <div class="w-[103px] h-[27px] left-[420px] top-[10px] absolute rounded-[5px] border ">
+              <label for="is_prioritized" class="left-[13px] top-[1px] absolute text-black text-base font-bold font-['Inter'] items_center" >Ưu tiên</label>
+              <input type="checkbox" class="w-[13px] h-[13px] left-[80px] top-[5px] absolute rounded text-black focus:ring-white" id="is_prioritized" name="is_prioritized" value=0 checked>
+            </div>  
         </div>
-        <div class="justify-start items-start gap-2.5 flex">
-          <div class="text-black text-[15px] font-bold font-['Inter']">thaovy</div>
+      
+      <div class="h-[333px] pt-2.5 left-[50px] top-[68px] absolute flex-col justify-start items-center gap-[34px] inline-flex overflow-hidden">
+        <div class="self-stretch h-[628px] pt-2.5 flex-col justify-start items-center gap-[34px] flex overflow-y-auto">
+          <div class="self-stretch justify-start items-center gap-[9px]">
+            <div class="w-[500px]">
+             <span class="text-black text-base font-bold font-['Inter']">TIÊU ĐỀ: </span>
+              <span class="text-black text-base font-normal font-['Inter']">{{$post->title}}</span>
+            </div>
+            <div class="w-[491px]">
+              <span class="text-black text-base font-bold font-['Inter']">Tội phạm: </span>
+              <span class="text-black text-base font-normal font-['Inter']">{{$post->type_of_crime}}</span>
+            </div>
+            <div class="w-[500px]">
+              <span class="text-black text-base font-bold font-['Inter']">Quận: </span>
+              <span class="text-black text-base font-normal font-['Inter']">{{$post->district}}</span>
+            </div>
+            <div class="w-[500px]">
+              <span class="text-black text-base font-bold font-['Inter']">Nội dung:</span>
+              <span class="text-black text-base font-normal font-['Inter']">{{$post->content}}</span>
+            </div>
+          </div>
         </div>
-        <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
-        <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">18/12</div>
+         <img class="w-[500px] h-[375px] left-[50px] top-[401px] absolute" src="https://via.placeholder.com/500x375" />
       </div>
-      <div class="self-stretch h-[333px] pt-2.5 flex-col justify-start gap-[34px] flex overflow-hidden">
-        <div class="self-stretch justify-start items-center gap-[72px] inline-flex">
-          <div class="w-[500px]"><span class="text-black text-base font-bold font-['Inter']">TIÊU ĐỀ: </span><span class="text-black text-base font-normal font-['Inter']">BỊ TRỘM LAPTOP TRONG TIỆM QUẦN ÁO</span></div>
-          <div class="w-[491px]"><span class="text-black text-base font-bold font-['Inter']">Tội phạm: </span><span class="text-black text-base font-normal font-['Inter']">Trộm cắp</span></div>
-          <div class="w-[500px]"><span class="text-black text-base font-bold font-['Inter']">Quận: </span><span class="text-black text-base font-normal font-['Inter']">Đống Đa</span></div>
-          <div class="w-[500px]"><span class="text-black text-base font-bold font-['Inter']">Nội dung</span><span class="text-black text-base font-normal font-['Inter']">Vào ngày 18/12 khi tôi đang thử quần áo trong một tiệm quần áo ở đường Nguyễn Lương Bằng, tôi có để cặp ở ngoài trong đó có laptop vì có bạn tôi ở ngoài sau đó tôi vào trong phòng thử đồ. Đến khi ra về tôi phát hiện chiếc laptop đã mất. Tôi nhờ nhân viên check camera phát hiện một người phụ nữ nhân lúc bạn tôi đang chọn quần áo lấy laptop của tôi rồi nhét vào trong người và đi ra khỏi tiệm. Chiếc laptop của tôi hiệu Lenovo trị giá 15 triệu đồng. Tôi đã báo cáo cơ quan chức năng. Nay tết đã cận kề hãy cảnh giác giữ gìn đồ vật cá nhân của mình.<br/></span></div>
-        </div>
-      </div>
-      <img class="w-[500px] h-[375px]" src="https://via.placeholder.com/500x375" />
+      </form>
     </div>
-    <div class="w-6 h-6 left-[536px] top-[24px] absolute"></div>
+    @endforeach
 </x-admin-layout>

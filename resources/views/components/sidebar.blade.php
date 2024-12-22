@@ -19,7 +19,7 @@
           <div class="text-[#161616] text-[15px] font-bold font-['Inter']">{{ Auth::user()->name }}</div>
         </div>
         <div class="left-0 top-[19px] absolute justify-start items-start gap-2.5 inline-flex">
-          <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">{{ Auth::user()->fullname }}</div>
+          <div class="text-[#6e767d] text-[15px] font-bold font-['Inter']">{{ Auth::user()->full_name }}</div>
         </div>
       </div>
       <img class="w-10 h-10 left-[12px] top-[10px] absolute  overflow-hidden" src = "{{asset('storage/default_user.png')}}"/>

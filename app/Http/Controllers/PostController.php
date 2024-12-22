@@ -83,4 +83,40 @@ class PostController extends Controller
         return view('ListPost', ['listpost' => $listposts]);    
     }
 
+    public function detail(Request $request) {  
+        $postId = $request->post_id;
+        $listposts= DB::table('post')
+                            ->join('users', 'users.id', '=', 'post.user_id')
+                            ->where('post.id','=', $postId)
+                            ->get();
+        return view('CensorPost',['listpost' => $listposts]);
+    }
+
+    public function censor(Request $request) {
+
+        $postId = $request->post_id;
+        $status = $request->post_status;
+
+        $post = \App\Models\post::find($postId);
+        if($post) {
+            DB::table('post')
+                ->where('id', $postId)
+                ->update(['status' => $status]);
+
+            return redirect()->route('index_censor');
+        }
+    }
+
+
+    public function delete(Request $request) {
+        
+        $postId = $request->post_id;
+
+        $post = \App\Models\post::find($postId);
+        if($post) {
+            $post->delete();
+
+            return redirect()->route('index_censor');
+        }
+    }
 }

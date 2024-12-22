@@ -13,9 +13,11 @@
     <div class="w-[600px] h-[1238px] relative">
         <div class="w-[600px] left-0 top-[105px] absolute">
         @foreach ($listpost as $post)
-            <button style="width: 600px; height: 72px; padding-top: 12px; padding-bottom: 12px; padding-left: 15px; border-bottom: 1px black solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
+          <form method="post" action="{{route('detail', ['post_id' => $post->id] ) }}" role = "none">
+          @csrf
+            <button type ="submit" style="width: 600px; height: 72px; padding-top: 12px; padding-bottom: 12px; padding-left: 15px; border-bottom: 1px black solid; justify-content: flex-start; align-items: center; gap: 24px; display: inline-flex">
                 <div style="width: 48px; height: 48px; position: relative">
-                    <img style="width: 48px; height: 48px; left: 0px; top: 0px; position: absolute" src="https://via.placeholder.com/48x48" />
+                    <img style="width: 48px; height: 48px; left: 0px; top: 0px; position: absolute" src="{{ asset('storage/default_user.png') }}" />
                 </div>
                 <div style="width: auto; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 9px;">
                     <div style="justify-content: flex-start; align-items: center; gap: 7px;">
@@ -30,5 +32,6 @@
                     </div>
                 </div>
             </button>
+          </form>
         @endforeach
 </x-admin-layout>

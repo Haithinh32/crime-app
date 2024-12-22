@@ -14,13 +14,13 @@
         <div class="w-[600px] h-[716px] px-[50px] py-5 border-b border-black flex-col justify-start items-start inline-flex">
             <div class="justify-start items-center gap-[7px] inline-flex">
                 <div class="w-[47.84px] h-12 relative">
-                    <img class="w-[47.84px] h-12 left-0 top-0 absolute" src="https://via.placeholder.com/48x48" />
+                    <img class="w-[47.84px] h-12 left-0 top-0 absolute" src="{{ asset('storage/default_user.png') }}" />
                 </div>
                 <div class="justify-start items-start gap-2.5 flex">
                     <div class="text-black text-[15px] font-bold font-['Inter']">{{$post->name}}</div>
                 </div>
-                <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">{{$post->created_at}}</div>
                 <div class="text-[#161616] text-[15px] font-bold font-['Inter']">.</div>
+                <div class="text-[#6e767d] text-[15px] font-light font-['Inter']">{{$post->created_at}}</div>
             </div>
             <div class="self-stretch h-[628px] pt-2.5 flex-col justify-start items-center gap-[34px] flex overflow-hidden">
                 <div class="self-stretch h-[628px] pt-2.5 flex-col justify-start items-center gap-[34px] flex overflow-y-auto">
