@@ -18,7 +18,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::get('/Profile',[HomeController::class, 'profile'])->name('profile');
     Route::get('/Post',[HomeController::class, 'post'])->name('post');
     Route::post('/Post', [PostController::class, 'create_post'])->name('create_post');
-    Route::post('/homepage',[PostController::class, 'search'])->name('Search');  
+    Route::post('/homepage_search',[PostController::class, 'search'])->name('Search');  
+    Route::post('/homepage',[PostController::class, 'delete'])->name('Delete'); 
 });
 
 Route::get('/AuthorizeAdmin', [AuthorityController::class, 'index_admin'])->name('index_admin');
