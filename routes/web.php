@@ -29,6 +29,9 @@ Route::get('/ListPost', [PostController::class, 'index_censor'])-> name('index_c
 Route::post('/ListPost', [PostController::class, 'detail'])->name('detail');
 
 Route::post('/Censor', [PostController::class, 'censor'])->name('censor');
+Route::post('/CensorDel', [PostController::class, 'delete_censor'])->name('delete_censor');
+
+Route::get('/Region',[PostController::class,'select_region'])->name('select_region');
 
 Route::middleware(['auth','verified','admin'])->group(function () {
 

@@ -12,7 +12,7 @@
     </x-slot:header>  
     @foreach($listpost as $post)
     <div class="w-[600px] h-[899px] left-0 top-[108px] absolute">
-      <form method="post" action="{{ route('censor',['post_id' => $post->id] ) }}">
+      <form method="post" action="{{ route('delete_censor',['post_id' => $post->id] ) }}">
       @csrf
         <button type="sumit" class="w-[180px] h-[45px] left-[376px] top-[854px] absolute bg-[#f91515]/80 rounded-[34.60px] shadow-[0px_6.012422561645508px_6.012422561645508px_0px_rgba(0,0,0,0.25)]  overflow-hidden">
           <div class="left-[75.04px] top-[16.35px] absolute text-center text-white text-[15px] font-bold font-['Inter']">Xóa </div>
@@ -36,11 +36,11 @@
           
             <div class="w-[103px] h-[27px] left-[420px] top-[10px] absolute rounded-[5px] border ">
               <label for="is_prioritized" class="left-[13px] top-[1px] absolute text-black text-base font-bold font-['Inter'] items_center" >Ưu tiên</label>
-              <input type="checkbox" class="w-[13px] h-[13px] left-[80px] top-[5px] absolute rounded text-black focus:ring-white" id="is_prioritized" name="is_prioritized" value=0 checked>
+              <input type="checkbox" class="w-[13px] h-[13px] left-[80px] top-[5px] absolute rounded text-black focus:ring-white" id="is_prioritized" name="is_prioritized" value='1'>
             </div>  
         </div>
       
-      <div class="h-[333px] pt-2.5 left-[50px] top-[68px] absolute flex-col justify-start items-center gap-[34px] inline-flex overflow-hidden">
+      <div class="h-[333px]pt-2.5 left-[50px] top-[68px] absolute flex-col justify-start items-center gap-[34px] inline-flex overflow-hidden">
         <div class="self-stretch h-[628px] pt-2.5 flex-col justify-start items-center gap-[34px] flex overflow-y-auto">
           <div class="self-stretch justify-start items-center gap-[9px]">
             <div class="w-[500px]">
@@ -61,8 +61,10 @@
             </div>
           </div>
         </div>
-         <img class="w-[500px] h-[375px] left-[50px] top-[401px] absolute" src="https://via.placeholder.com/500x375" />
       </div>
+        @if($post->image)
+         <img class="w-[500px] h-[375px] left-[50px] top-[401px] absolute" src="{{$post->image}}"/>
+        @endif
       </form>
     </div>
     @endforeach

@@ -17,7 +17,7 @@ class AuthorityController extends Controller
                 ->where('id', $userId)
                 ->update(['usertype' => $type]);
 
-            return response()->json(['message' => 'User type updated successfully']);
+             return redirect()->route('index_admin');
         }
         else {
             return response()->json(['error' => 'User not found'], 404);

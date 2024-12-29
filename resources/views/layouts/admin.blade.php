@@ -29,16 +29,26 @@
                     {{ $slot }}
                 </div>
             </div>
-            <div class="w-[360px] h-[1000px] right-80 top-0 fixed">
-                <div class="w-[360px] h-[1000px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d25619] to-red-700"></div>
-                @if (Route::has('register'))
-                <form method="POST" action="{{ route('logout') }}">
+            <div class="w-[360px] h-[1080px] relative">
+                <div class="w-[360px] h-[1000px] right-80 top-0 fixed">
+                    <div class="w-[360px] h-[1000px] left-0 top-0 absolute bg-gradient-to-t from-[#f9b115] via-[#d25619] to-red-700"></div>
+
+                    <form method="post" action="{{ route('Search') }}" role="none">
                     @csrf
-                    <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[800px] absolute bg-white rounded-[50px] border border-black">
-                        <div class="left-[57px] top-[13px] absolute text-[#161616] text-[19px] font-bold font-['Inter']"> Đăng xuất </div>
-                    </button>
-                </form>
-                @endif
+                    <div class="w-[360px] h-[30px] top-[54px] absolute">
+                            <input class="w-[360px] h-[30px] px-[15px] py-1.5 top-0 absolute bg-white rounded-[15px] border border-black justify-start items-center gap-[50px]" placeholder="Chọn khu vực" name="search"></input>
+                        <div class="w-[30px] h-[30px] left-0 top-0 absolute  overflow-hidden"></div>
+                    </div>
+                    </form>    
+                    @if (Route::has('register'))
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="w-[230px] h-[50px] left-[65px] top-[800px] absolute bg-white rounded-[50px] border border-black">
+                            <div class="left-[57px] top-[13px] absolute text-[#161616] text-[19px] font-bold font-['Inter']"> Đăng xuất </div>
+                        </button>
+                    </form>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

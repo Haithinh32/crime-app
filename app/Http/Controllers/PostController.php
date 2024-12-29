@@ -37,13 +37,19 @@ class PostController extends Controller
             if ($request->hasFile('video')) {
             $post -> video = $vidfile.$vidfilename;}
             if(Auth::user() -> usertype == 'admin'){
-                $post -> priority =$request->input('priority');
-                $post -> status = 1;
+                $post -> status = "1";
+                if($request->input('is_prioritized') == '1'){
+                    $post -> priority = "0";
+                }
+                else{
+                    $post -> priority = "1";
+                }
             }
             else{
-                $post -> priority = 1;
-                $post -> status = 0;
+                $post -> priority = "1";
+                $post -> status = "0";
             }
+            $post -> district = $request->get('region');
             $post -> save();
         } catch (\Exception $e) {
             dd($e);
@@ -61,6 +67,7 @@ class PostController extends Controller
                     ->get();
     return view('Homepage', ['listpost' => $listposts]);
     }
+
     public function search(Request $request)
     {
         $query = $request->input('search');
@@ -80,6 +87,7 @@ class PostController extends Controller
         $listposts= DB::table('post')
                             ->join('users', 'users.id', '=', 'post.user_id')
                             ->where('post.status', '=', '0')
+                            ->select('post.id', 'post.user_id', 'post.title', 'post.content', 'post.district', 'post.type_of_crime', 'post.image', 'post.video', 'post.priority', 'post.created_at', 'users.name', 'users.full_name')
                             ->get();
         return view('ListPost', ['listpost' => $listposts]);    
     }
@@ -89,23 +97,29 @@ class PostController extends Controller
         $listposts= DB::table('post')
                             ->join('users', 'users.id', '=', 'post.user_id')
                             ->where('post.id','=', $postId)
+                            ->select('post.id', 'post.user_id', 'post.title', 'post.content', 'post.district', 'post.type_of_crime', 'post.image', 'post.video', 'post.priority', 'post.created_at', 'users.name', 'users.full_name')
                             ->get();
         return view('CensorPost',['listpost' => $listposts]);
     }
 
     public function censor(Request $request) {
-
         $postId = $request->post_id;
         $status = $request->post_status;
-
-        $post = \App\Models\post::find($postId);
-        if($post) {
-            DB::table('post')
-                ->where('id', $postId)
-                ->update(['status' => $status]);
-
-            return redirect()->route('index_censor');
+        $isPrioritized = $request->input('is_prioritized');
+        if ($isPrioritized == '1'){
+            $priority = "0";
         }
+        else {
+            $priority = "1";
+        }
+        DB::table('post')
+        ->where('id', '=', $postId)
+        ->update([
+            'status' => $status,
+            'priority' => $priority
+        ]);
+            return redirect()->route('index_censor');
+
     }
 
 
@@ -115,10 +129,17 @@ class PostController extends Controller
 
         $post = \App\Models\post::find($postId);
         if($post) {
-            DB::table('post')->where('post.id', '=', $id)->delete();
+            DB::table('post')->where('post.id', $postId)->delete();
 
             return redirect()->route('index_censor');
         }
+    }
+
+    public function select_region(){
+        $listregions = DB::table('region')
+                            ->orderBy('id')
+                            ->get();
+        return view('Post',['listregion' => $listregions]);
     }
 
     public function delete(Request $request) {
