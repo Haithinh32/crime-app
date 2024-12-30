@@ -24,12 +24,12 @@
 
             <div class="w-[381.99px] h-[65.78px] left-[37.01px] top-[119.72px] absolute">
                 <label class="w-[175.71px] h-[19.10px] left-[18.34px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Tiêu đề</label>
-                <input type="text" name="title" id="title" placeholder="Nhập vào đây" class="form-control w-[381.99px] h-[31.83px] left-0 top-[33.95px] absolute bg-white rounded-[10px] border border-black">
+                <input type="text" name="title" id="title" placeholder="Nhập vào đây" class="form-control w-[381.99px] h-[31.83px] left-0 top-[33.95px] absolute bg-white rounded-[10px] border border-black"required focus>
             </div>
 
             <div class="w-[381.99px] h-[62.65px] left-[37px] top-[197.18px] absolute">
                 <label class="w-[148.21px] h-[15.92px] left-[18.35px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Loại tội phạm</label>
-                <input type="text" name="type_of_crime" id="type_of_crime" placeholder="Nhập vào đây" class="form-control w-[381.99px] h-[31.83px] left-0 top-[30.82px] absolute bg-white rounded-[10px] border border-black">
+                <input type="text" name="type_of_crime" id="type_of_crime" placeholder="Nhập vào đây" class="form-control w-[381.99px] h-[31.83px] left-0 top-[30.82px] absolute bg-white rounded-[10px] border border-black"required focus>
             </div>
 
             <div class="w-[210px] h-[80px] left-[40px] top-[272px] absolute  overflow-hidden">
@@ -56,7 +56,7 @@
 
            <div class="w-[382px] h-[200px] left-[36.70px] top-[350px] absolute">
                 <label class="w-[119px] h-[19px] left-[19px] top-0 absolute text-[#161616] text-[15px] font-bold font-['Inter']">Nội dung</label>
-                <input type="textfield" name="content" id="content" placeholder="Nhập vào đây" class="form-control w-[382px] h-[166px] left-0 top-[34px] absolute bg-white rounded-[10px] border border-black">
+                <input type="textfield" name="content" id="content" placeholder="Nhập vào đây" class="form-control w-[382px] h-[166px] left-0 top-[34px] absolute bg-white rounded-[10px] border border-black" required focus>
             </div>
 
             <div class="w-[381.99px] h-[31.83px] left-[37px] top-[560px] absolute">
